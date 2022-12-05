@@ -59,6 +59,15 @@ app.get('/api', (req, res)=>{
   }
 })
 
+app.get('/', (req, res)=>{
+  try {
+    res.send("Hello Persons")
+  } catch (error) {
+    console.log(error)
+    res.status(500).send('Server error')
+  }
+})
+
 app.use(morgan('dev'))
 
 
